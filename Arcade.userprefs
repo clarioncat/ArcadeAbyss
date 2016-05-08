@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ColdPlayer.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ColdPlayer.cs" Line="60" Column="4" />
+      <File FileName="Assets/Scripts/HotPlayer.cs" Line="119" Column="22" />
+      <File FileName="Assets/Scripts/ColdFly.cs" Line="7" Column="39" />
+      <File FileName="Assets/Scripts/Generate.cs" Line="19" Column="42" />
+      <File FileName="Assets/Scripts/HotItem.cs" Line="9" Column="2" />
+      <File FileName="Assets/Scripts/ColdItem.cs" Line="23" Column="31" />
+      <File FileName="Assets/Scripts/HotFly.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/Obstacle.cs" Line="8" Column="2" />
+      <File FileName="Assets/Scripts/GameOverController.cs" Line="36" Column="47" />
+      <File FileName="Assets/Scripts/AudioController.cs" Line="14" Column="31" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
