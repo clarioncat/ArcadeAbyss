@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{53EA297F-58C6-F93D-5166-77DCF4D44FF0}") = "ArcadeAbyss", "Assembly-CSharp.csproj", "{1DECD4B9-9553-5A33-41D3-62119D69548C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DECD4B9-9553-5A33-41D3-62119D69548C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DECD4B9-9553-5A33-41D3-62119D69548C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DECD4B9-9553-5A33-41D3-62119D69548C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DECD4B9-9553-5A33-41D3-62119D69548C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

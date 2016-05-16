@@ -12,9 +12,18 @@ public class Highscore : MonoBehaviour
     public Image ButtonImage = null;
     public Sprite ButtonExitSpirte = null;
     public Sprite ButtonRestartSprite = null; 
+	public GameObject MedalBronze;
+	public GameObject MedalSilver;
+	public GameObject MedalGold;
+
 
     private int _coldHighscoreValue = 0;
     private int _hotHighscoreValue = 0;
+
+	private float coldMedalX = 2;
+	private float coldMedalY = 2;
+	private float hotMedalX = 2;
+	private float hotMedalY = 2;
 
     private AudioController audioController;
     public AudioController AudioController
@@ -37,6 +46,39 @@ public class Highscore : MonoBehaviour
 
         HotHighscoreValueText.text = string.Format("{0}", _hotHighscoreValue.ToString());
         ColdHighscoreValueText.text = string.Format("{0}",  _coldHighscoreValue.ToString());
+
+
+
+		if (_coldHighscoreValue >= 500 && _coldHighscoreValue <= 4999)
+		{
+			Instantiate (MedalBronze, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
+		}
+		else if (_coldHighscoreValue >= 5000 && _coldHighscoreValue <= 9999)
+		{
+			Instantiate (MedalSilver, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
+		}
+		else if (_coldHighscoreValue >= 10000)
+		{
+			Instantiate (MedalGold, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
+		}
+
+
+		if (_hotHighscoreValue >= 500 && _hotHighscoreValue <= 4999)
+		{
+			Instantiate (MedalBronze, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
+		}
+		else if (_hotHighscoreValue >= 5000 && _hotHighscoreValue <= 9999)
+		{
+			Instantiate (MedalSilver, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
+		}
+		else if (_hotHighscoreValue >= 10000)
+		{
+			Instantiate (MedalGold, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
+		}
+
+
+
+
     }
 
     private void Update()
