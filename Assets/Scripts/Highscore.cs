@@ -49,29 +49,29 @@ public class Highscore : MonoBehaviour
 
 
 
-		if (_coldHighscoreValue >= 500 && _coldHighscoreValue <= 4999)
+		if (_coldHighscoreValue >= 3000 && _coldHighscoreValue <= 6999)
 		{
 			Instantiate (MedalBronze, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
 		}
-		else if (_coldHighscoreValue >= 5000 && _coldHighscoreValue <= 9999)
+		else if (_coldHighscoreValue >= 7000 && _coldHighscoreValue <= 10999)
 		{
 			Instantiate (MedalSilver, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
 		}
-		else if (_coldHighscoreValue >= 10000)
+		else if (_coldHighscoreValue >= 11000)
 		{
 			Instantiate (MedalGold, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
 		}
 
 
-		if (_hotHighscoreValue >= 500 && _hotHighscoreValue <= 4999)
+		if (_hotHighscoreValue >= 3000 && _hotHighscoreValue <= 6999)
 		{
 			Instantiate (MedalBronze, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
 		}
-		else if (_hotHighscoreValue >= 5000 && _hotHighscoreValue <= 9999)
+		else if (_hotHighscoreValue >= 7000 && _hotHighscoreValue <= 10999)
 		{
 			Instantiate (MedalSilver, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
 		}
-		else if (_hotHighscoreValue >= 10000)
+		else if (_hotHighscoreValue >= 11000)
 		{
 			Instantiate (MedalGold, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
 		}
