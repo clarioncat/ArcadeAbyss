@@ -16,7 +16,9 @@ public class Highscore : MonoBehaviour
 	public GameObject MedalSilver;
 	public GameObject MedalGold;
 
-
+    [SerializeField] private int _bronzeScore = 1000;
+    [SerializeField] private int _silverScore = 4000;
+    [SerializeField] private int _goldScore = 10000;
     private int _coldHighscoreValue = 0;
     private int _hotHighscoreValue = 0;
 
@@ -49,29 +51,29 @@ public class Highscore : MonoBehaviour
 
 
 
-		if (_coldHighscoreValue >= 500 && _coldHighscoreValue <= 4999)
+		if (_coldHighscoreValue >= _bronzeScore && _coldHighscoreValue < _silverScore)
 		{
 			Instantiate (MedalBronze, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
 		}
-		else if (_coldHighscoreValue >= 5000 && _coldHighscoreValue <= 9999)
+		else if (_coldHighscoreValue >= _silverScore && _coldHighscoreValue < _goldScore)
 		{
 			Instantiate (MedalSilver, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
 		}
-		else if (_coldHighscoreValue >= 10000)
+		else if (_coldHighscoreValue >= _goldScore)
 		{
 			Instantiate (MedalGold, new Vector3(3.35f, -2.28f, 0), Quaternion.identity);
 		}
 
 
-		if (_hotHighscoreValue >= 500 && _hotHighscoreValue <= 4999)
+		if (_hotHighscoreValue >= _bronzeScore && _hotHighscoreValue < _silverScore)
 		{
 			Instantiate (MedalBronze, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
 		}
-		else if (_hotHighscoreValue >= 5000 && _hotHighscoreValue <= 9999)
+		else if (_hotHighscoreValue >= _silverScore && _hotHighscoreValue < _goldScore)
 		{
 			Instantiate (MedalSilver, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
 		}
-		else if (_hotHighscoreValue >= 10000)
+		else if (_hotHighscoreValue >= _goldScore)
 		{
 			Instantiate (MedalGold, new Vector3(-3.35f, 2.28f, 0), Quaternion.Euler(180, 0, 0));
 		}
