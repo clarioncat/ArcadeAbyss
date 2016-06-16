@@ -11,22 +11,21 @@ public class GameManager : MonoBehaviour {
     public Generate generate; 
     public Text coldCountdownText;
     public Text hotCountdownText;
+    public Text hotYouDied;
+    public Text coldYouDied;
+
     public int countdownValue = 3;
-    public string startCommand = "FLY";
-    public float countdownFrequence = 0.4f  ; 
+    public string startCommand = "Fly";
+    public float countdownFrequence = 0.4f  ;
+    public float velocityIncreaseAfterDeath = 0.2f;
     int deathCount = 0;
-    public GameObject Controlls; 
+    public GameObject Controlls;
+
     private AudioController audioController; 
-    public AudioController AudioController {
-        get
-        {
-            if(audioController == null)
-                return audioController = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
-            return audioController; 
-        }
-    }
 
     void Start () {
+        audioController = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
+
         HotPlayer.OnDie += DieCount;
         ColdPlayer.OnDie += DieCount;
 
@@ -38,34 +37,33 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(Countdown());
 
         InitializeRocks();
-        AudioController.PlayBGMCountdown();
+        audioController.PlayBGMCountdown();
+
+
     }
 
     private void DieCount(string playerName, int scoreValue)
     {
         deathCount++;
-        AudioController.playDeathSound();
+        audioController.playDeathSound();
+        generate.velocityIncreaseStep = velocityIncreaseAfterDeath;
 
-        if (deathCount == 2)
-        {
-            if (playerName == "cs")
-            {
-                PlayerPrefs.SetInt("cs", scoreValue);
-            }
-            else
-            {
-                PlayerPrefs.SetInt("hs", scoreValue);
-            }
-            StartCoroutine(DelayedDeath(playerName, scoreValue));
-        }
         if (playerName == "cs")
         {
             PlayerPrefs.SetInt("cs", scoreValue);
+            coldYouDied.enabled = true; 
         }
         else
         {
             PlayerPrefs.SetInt("hs", scoreValue);
+            hotYouDied.enabled = true;
         }
+
+        if (deathCount == 2)
+        {
+            StartCoroutine(DelayedDeath(playerName, scoreValue));
+        }
+
         PlayerPrefs.Save();
     }
 
